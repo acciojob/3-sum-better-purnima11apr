@@ -1,18 +1,19 @@
 function threeSum(arr, target) {
-// write your code here
-	nums.sort((a, b) => a - b);
+  
+    arr.sort((a, b) => a - b);
 
     let closestSum = Infinity;
     let minDiff = Infinity;
 
-    for (let i = 0; i < nums.length - 2; i++) {
+    for (let i = 0; i < arr.length - 2; i++) {
         let left = i + 1;
-        let right = nums.length - 1;
+        let right = arr.length - 1;
 
         while (left < right) {
-            const sum = nums[i] + nums[left] + nums[right];
+            const sum = arr[i] + arr[left] + arr[right];
             const diff = Math.abs(sum - target);
-			  if (diff < minDiff) {
+
+            if (diff < minDiff) {
                 minDiff = diff;
                 closestSum = sum;
             }
@@ -26,7 +27,6 @@ function threeSum(arr, target) {
     }
 
     return closestSum;
-  
 }
 
 module.exports = threeSum;
